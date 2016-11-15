@@ -13,7 +13,7 @@
     android:background="@android:color/transparent">
 
     <TextView
-        android:text="Enter your task for today"
+        android:text="@string/enter_your_task_for_today"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView4"
@@ -35,13 +35,10 @@
         >
 
         <TextView
-            android:text="Task 1"
+            android:text="@string/task_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:fontFamily="cursive"
             android:layout_weight="1"
             android:textColor="@color/colorPrimary" />
@@ -52,9 +49,6 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/editText"
-            android:layout_alignTop="@+id/textView"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:layout_weight="1" />
 
     </LinearLayout>
@@ -67,15 +61,12 @@
         >
 
         <TextView
-            android:text="Task 2"
+            android:text="@string/task_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView2"
             android:layout_marginTop="25dp"
             android:fontFamily="cursive"
-            android:layout_below="@+id/editText"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_weight="1"
             android:textColor="@color/colorPrimary" />
 
@@ -86,9 +77,6 @@
             android:ems="10"
             android:id="@+id/editText2"
             android:layout_marginTop="18dp"
-            android:layout_below="@+id/textView4"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:layout_weight="1" />
 
     </LinearLayout>
@@ -97,21 +85,17 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:layout_marginTop="200dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
         <TextView
-            android:text="Task 3"
+            android:text="@string/task_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView3"
             android:fontFamily="cursive"
-            android:layout_alignBottom="@+id/editText2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_weight="1"
             android:textColor="@color/colorPrimary" />
 
@@ -121,8 +105,6 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/editText3"
-            android:layout_below="@+id/editText2"
-            android:layout_alignParentRight="true"
             android:layout_weight="1" />
     </LinearLayout>
 
@@ -143,9 +125,9 @@
         android:fadeScrollbars="false"
         style="@style/Widget.AppCompat.Button"
         android:textColorLink="?attr/colorAccent" />
-
+    
     <Button
-        android:text="View All"
+        android:text="@string/view_all"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button_view"

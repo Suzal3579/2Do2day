@@ -43,27 +43,26 @@ public class MainActivity extends AppCompatActivity {
     }
     public void viewData(){
         buttonView.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Cursor res = myDb.getAllData();
-                        if(res.getCount() == 0){
-                            Toast.makeText(MainActivity.this,"Data Not found",Toast.LENGTH_LONG).show();
-                            showMessage("Error","No data found.");
-                            return;
-                        }else{
-                            StringBuffer buffer = new StringBuffer();
-                            while(res.moveToNext()){
-                                buffer.append("id :"+res.getString(0)+"\n");
-                                buffer.append("name :"+res.getString(1)+"\n");
-                                buffer.append("surname :"+res.getString(2)+"\n");
-                                buffer.append("marks :"+res.getString(3)+"\n\n");
-                            }
-                            // Show All data ...
-                            showMessage("Data ",buffer.toString());
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Cursor res = myDb.getAllData();
+                    if(res.getCount() == 0){
+                        Toast.makeText(MainActivity.this,"Data Not found",Toast.LENGTH_LONG).show();
+                        showMessage("Add Something!","Add Some Task. You currently have to task added.");
+                        return;
+                    }else{
+                        StringBuffer buffer = new StringBuffer();
+                        while(res.moveToNext()){
+                            buffer.append("Task 1 :"+res.getString(1)+"\n");
+                            buffer.append("Task 2 :"+res.getString(2)+"\n");
+                            buffer.append("Task 3 :"+res.getString(3)+"\n\n");
                         }
+                        // Show All data ...
+                        showMessage("Data ",buffer.toString());
                     }
                 }
+            }
         );
     }
 

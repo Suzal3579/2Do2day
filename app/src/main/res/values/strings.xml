@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="under_development_by_suzal">Under Development By Suzal</string>
+    <string name="app_name">2Do2Day</string>
+    <string name="insert">Insert</string>
+    <string name="task_1">Task 1</string>
+    <string name="enter_your_task_for_today">Enter your task for today</string>
+    <string name="task_2">Task 2</string>
+    <string name="task_3">Task 3</string>
+    <string name="view_all">View All</string>
 </resources>
