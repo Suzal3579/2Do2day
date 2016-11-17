@@ -49,8 +49,16 @@ public class MainActivity extends AppCompatActivity {
                             boolean isInserted = myDb.insertData(editName.getText().toString(), editSurname.getText().toString(), editMarks.getText().toString());
                             if (isInserted == true) {
                                 Toast.makeText(MainActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
+                                editMarks.setText("");
+                                editSurname.setText("");
+                                editName.setText("");
+                                editTextId.setText("");
                             } else {
                                 Toast.makeText(MainActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
+                                editMarks.setText("");
+                                editSurname.setText("");
+                                editName.setText("");
+                                editTextId.setText("");
                             }
                         }
                     }
@@ -99,7 +107,15 @@ public class MainActivity extends AppCompatActivity {
                             );
                             if (isUpdated == true) {
                                 Toast.makeText(MainActivity.this, "Data Updated", Toast.LENGTH_LONG).show();
+                                editMarks.setText("");
+                                editSurname.setText("");
+                                editName.setText("");
+                                editTextId.setText("");
                             } else {
+                                editMarks.setText("");
+                                editSurname.setText("");
+                                editName.setText("");
+                                editTextId.setText("");
                                 Toast.makeText(MainActivity.this, "Data Not Updated", Toast.LENGTH_LONG).show();
                             }
                         }
@@ -119,8 +135,10 @@ public class MainActivity extends AppCompatActivity {
                             Integer deletedRows = myDb.deletedata(editTextId.getText().toString());
                             if (deletedRows > 0) {
                                 Toast.makeText(MainActivity.this, "Data Deleted", Toast.LENGTH_SHORT).show();
+                                editTextId.setText("");
                             } else {
                                 Toast.makeText(MainActivity.this, "Data Not Deleted. Make sure you have enter the number right.", Toast.LENGTH_LONG).show();
+                                editTextId.setText("");
                             }
                         }
                     }
