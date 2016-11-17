@@ -12,6 +12,16 @@
     tools:context="com.example.pramesh.demo.MainActivity"
     android:background="@android:color/transparent">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
     <TextView
         android:text="@string/enter_your_task_for_today"
         android:layout_width="match_parent"
@@ -108,37 +118,96 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-    <Button
-        android:text="@string/insert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_add"
-        android:layout_above="@+id/button_view"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:fontFamily="cursive"
-        android:layout_marginBottom="15dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textColor="@color/colorPrimary"
-        android:textColorHighlight="@color/colorPrimaryDark"
-        android:fadeScrollbars="false"
-        style="@style/Widget.AppCompat.Button"
-        android:textColorLink="?attr/colorAccent" />
-    
-    <Button
-        android:text="@string/view_all"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button_view"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="62dp"
-        android:fontFamily="cursive"
+        android:layout_above="@+id/linearLayout9"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHighlight="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textColorLink="@color/colorPrimaryDark" />
+        android:layout_marginTop="280dp"
+        android:id="@+id/linearLayout"
+        tools:ignore="UnknownIdInLayout">
+
+        <TextView
+            android:text="@string/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView7"
+            android:layout_weight="1"
+            android:textStyle="normal|italic"
+            android:fontFamily="cursive"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text|textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextId"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp">
+
+        <Button
+            android:text="@string/view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_view"
+            android:layout_marginBottom="62dp"
+            android:fontFamily="cursive"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHighlight="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textColorLink="@color/colorPrimaryDark"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:text="@string/insert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_add"
+            android:fontFamily="cursive"
+            android:layout_marginBottom="13dp"
+            android:textColor="@color/colorPrimary"
+            android:textColorHighlight="@color/colorPrimaryDark"
+            android:fadeScrollbars="false"
+            style="@style/Widget.AppCompat.Button"
+            android:textColorLink="?attr/colorAccent"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="@string/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDelete"
+            android:fontFamily="cursive"
+            android:textColor="@color/colorPrimary"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:text="@string/update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/update"
+            android:fontFamily="cursive"
+            android:layout_marginBottom="13dp"
+            android:textColor="@color/colorPrimary"
+            android:textColorHighlight="@color/colorPrimaryDark"
+            android:fadeScrollbars="false"
+            style="@style/Widget.AppCompat.Button"
+            android:textColorLink="?attr/colorAccent"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
 </RelativeLayout>

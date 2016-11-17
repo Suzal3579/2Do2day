@@ -6,4 +6,8 @@
     <string name="task_2">Task 2</string>
     <string name="task_3">Task 3</string>
     <string name="view_all">View All</string>
+    <string name="delete">Delete</string>
+    <string name="number">Number</string>
+    <string name="update">Update</string>
+    <string name="view">view</string>
 </resources>
