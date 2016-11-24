@@ -1,5 +1,6 @@
 package com.example.pramesh.demo;
 
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDb;
     EditText editName, editSurname, editMarks, editTextId;
     Button buttonInsert, buttonView, buttonUpdate, buttonDelete;
+    public static final String titleBegMsg = "What's This?";
+    public static final String messageBodyAlertBox = "App That Takes In Your Task And Displays It.\n\n\n\n\n\n By - Pramesh Bajracharya";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +30,24 @@ public class MainActivity extends AppCompatActivity {
         buttonView = (Button) findViewById(R.id.button_view);
         buttonUpdate = (Button) findViewById(R.id.update);
         buttonDelete = (Button) findViewById(R.id.buttonDelete);
+        if (isFirstTime()) {
+            showBeginning(titleBegMsg, messageBodyAlertBox);
+        }
         AddData();
         viewData();
         updateData();
         deleteData();
+    }
+
+    private boolean isFirstTime() {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        boolean ranBefore = preferences.getBoolean("RanBefore", false);
+        if (!ranBefore) {
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("RanBefore", true);
+            editor.commit();
+        }
+        return !ranBefore;
     }
 
     public void AddData() {
@@ -149,6 +166,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showMessage(String title, String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
+    }
+
+    private void showBeginning(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle(title);
