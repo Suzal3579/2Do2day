@@ -1,7 +1,12 @@
 package com.example.pramesh.demo;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+
+import java.util.Calendar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonInsert, buttonView, buttonUpdate, buttonDelete;
     public static final String titleBegMsg = "What's This?";
     public static final String messageBodyAlertBox = "App That Takes In Your Task And Displays It.\n\n\n\n\n\n By - Pramesh Bajracharya";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,17 @@ public class MainActivity extends AppCompatActivity {
         viewData();
         updateData();
         deleteData();
+
+//      Create Notification Alert Every 24 hours ...
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 7);
+        calendar.set(Calendar.MINUTE, 20);
+        calendar.set(Calendar.SECOND, 0);
+        Intent intent1 = new Intent(MainActivity.this, AlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 10120, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager am = (AlarmManager) MainActivity.this.getSystemService(MainActivity.this.ALARM_SERVICE);
+        am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 
     private boolean isFirstTime() {
@@ -89,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
                         Cursor res = myDb.getAllData();
                         if (res.getCount() == 0) {
                             Toast.makeText(MainActivity.this, "Data Not found", Toast.LENGTH_LONG).show();
